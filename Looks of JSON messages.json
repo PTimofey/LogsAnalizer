@@ -1,0 +1,10 @@
+{
+    "Deamon" : "sshd",
+    "Time" : "2025-02-09",
+    "Text" : "authentication failure",
+    "Information" : 
+    {
+        "IP" : "192.168.0.1",
+        "port" : "48978"
+    }
+}

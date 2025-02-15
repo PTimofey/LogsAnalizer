@@ -10,11 +10,12 @@ set(HEADERS
 Message.hpp
 Connection.hpp
 Node.hpp
-Manager/Server.cpp
 Manager/Server.hpp
+Manager/MessageHandler.hpp
 )
 
 set(SRC
+Manager/Server.cpp
 Analizer.cpp
 Connection.cpp
 )

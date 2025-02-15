@@ -1,11 +1,9 @@
 #pragma once
-#include "../Connection.hpp"
 #include "../Node.hpp"
 #include "MessageHandler.hpp"
 #include<thread>
 
 
-#define MAX_CORE_COUNT 4
 
 
 
@@ -57,9 +55,9 @@ protected:
 class NodesManipulator : public server_interface
 {
 public:
-    NodesManipulator(const uint16_t& port) : server_interface(port) 
+    NodesManipulator(const uint16_t& port) : server_interface(port), LogHandler(deqConnections,deqConnections)
     {
-        
+
     }
     
 
@@ -76,11 +74,14 @@ public:
 
     void OnMessage() override
     {
-        
+        //LogHandler.HandleMessage();   
     }
 
 
 private:
+
+
+    MessageHandler LogHandler;
 
 };
 

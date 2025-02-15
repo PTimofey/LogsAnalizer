@@ -13,10 +13,11 @@
 
 
 
-
 class Connection
 {
 public:
+
+
     enum class type
     {
         server,
