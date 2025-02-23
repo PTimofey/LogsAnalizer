@@ -4,7 +4,7 @@
 #include<deque>
 
 
-#define BUFFER = 1024 
+
 
 class LogObject
 {

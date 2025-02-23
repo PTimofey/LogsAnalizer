@@ -25,7 +25,9 @@ class Node
 {
 public:
     Node(std::shared_ptr<Connection> connection, StateOfNode st) : ConnectionToRemoteNode(connection), state(st)
-    {}
+    {
+        
+    }
 
 
     

@@ -15,11 +15,12 @@ void server_interface::WaitForConnection()
         contextAcceptor.async_accept([this](boost::system::error_code ec, boost::asio::ip::tcp::socket socket){
             if(!ec)
             {
+                
                 std::cout<<"[SERVER]: new connection "<<socket.remote_endpoint()<<'\n';
                 std::shared_ptr<Connection> new_connection=std::make_shared<Connection>(context,std::move(socket), IncomingMessages, Connection::type::server);
                 ++countID;
                 new_connection->ID=countID;
-
+                new_connection->IPv4=socket.remote_endpoint().data()->sa_data;
                 deqConnections.push_back(std::make_shared<Node>(new_connection, StateOfNode::CONNECTING));
                 deqConnections.back()->ConnectionToRemoteNode->connect_to_client();
             }

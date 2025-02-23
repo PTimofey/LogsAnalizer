@@ -21,8 +21,22 @@ Connection.cpp
 )
 
 add_executable(Server ${SRC} ${HEADERS})
+
 target_link_libraries(Server Boost::json)
+
+set_target_properties(
+    Server PROPERTIES
+    CXX_STANDARD 20
+    CXX_STANDARD_REQUIRED ON
+)
 
 
 add_executable(Client ClientNode.cpp Client/Client.hpp Client/Client.cpp Connection.hpp Connection.cpp Message.hpp Node.hpp)
+
+set_target_properties(
+    Client PROPERTIES
+    CXX_STANDARD 20
+    CXX_STANDARD_REQUIRED ON
+)
+
 target_link_libraries(Client Boost::json)

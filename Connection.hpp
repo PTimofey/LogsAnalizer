@@ -39,7 +39,7 @@ public:
 
 
     uint16_t ID;
-
+    std::string IPv4;
 protected:
 
     void Write_Head()
